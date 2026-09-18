@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Turnos Médicos</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="contenedor">
+
+        <!-- =========================
+             SECCIÓN IZQUIERDA
+        ========================== -->
+        <section class="formulario">
+
+            <div class="encabezado">
+                <span class="icono">✚</span>
+                <div>
+                    <h1>Gestión de Turnos</h1>
+                    <p>Registrar nuevo turno</p>
+                </div>
+            </div>
+
+            <form id="formTurno">
+
+                <div class="campo">
+                    <label for="nombre">Nombre del paciente</label>
+                    <input
+                        type="text"
+                        id="nombre"
+                        placeholder="Ej: Juan Pérez"
+                        required
+                    >
+                </div>
+
+                <div class="fila">
+
+                    <div class="campo">
+                        <label for="fecha">Fecha</label>
+                        <input
+                            type="date"
+                            id="fecha"
+                            required
+                            min=""
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="hora">Horario</label>
+                        <select id="hora" required>
+                            <option value="">Seleccionar horario</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="campo">
+                    <label for="especialidad">Especialidad</label>
+
+                    <select id="especialidad" required>
+                        <option value="">Seleccionar especialidad</option>
+                        <option value="Cardiología">Cardiología</option>
+                        <option value="Clínica Médica">Clínica Médica</option>
+                        <option value="Dermatología">Dermatología</option>
+                        <option value="Ginecología">Ginecología</option>
+                        <option value="Oftalmología">Oftalmología</option>
+                        <option value="Pediatría">Pediatría</option>
+                        <option value="Traumatología">Traumatología</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-guardar">
+                    <span>＋</span>
+                    Guardar turno
+                </button>
+
+                <div id="mensaje" class="mensaje"></div>
+
+            </form>
+
+        </section>
+
+
+        <!-- =========================
+             SECCIÓN DERECHA
+        ========================== -->
+        <section class="panel-turnos">
+
+            <div class="titulo-panel">
+                <div>
+                    <h2>Turnos registrados</h2>
+                    <p>Agenda de pacientes</p>
+                </div>
+
+                <div class="contador">
+                    <span id="cantidadTurnos">0</span>
+                    turnos
+                </div>
+            </div>
+
+            <div id="listaTurnos" class="lista-turnos">
+
+                <!-- Los turnos se generan con JavaScript -->
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
